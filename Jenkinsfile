@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 //sh
-                bat "docker build -t=shariarrana/selenium-docker ."
+                bat "docker build -t=shariarahmed/firstapp ."
             }
         }
         stage('Push Image') {
@@ -19,7 +19,7 @@ pipeline {
 			    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     //sh
 			        bat "docker login --username=${user} --password=${pass}"
-			        bat "docker push shariarrana/firstapp:latest"
+			        bat "docker push shariarahmed/firstapp:latest"
 			    }
             }
         }
