@@ -19,7 +19,7 @@ pipeline {
 			    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     //sh
 			        bat "docker login --username=${user} --password=${pass}"
-			        bat "docker push shariarrana/selenium-docker:latest"
+			        bat "docker push shariarrana/firstapp:latest"
 			    }
             }
         }
